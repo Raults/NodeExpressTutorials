@@ -1,4 +1,4 @@
-var methods = {};
+var methods = module.exports = {};
 
 this.output = 1337;
 
@@ -16,5 +16,3 @@ methods.areaOfRectangle = function(a, b) {
   output = a*b;
   return output;
 }
-
-exports.data = methods;
