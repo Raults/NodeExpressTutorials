@@ -1,12 +1,11 @@
 var express = require('express');
+var path = require('path');
 var app = express();
 
-console.log(__dirname);
-
 app.use('/cssFiles', express.static(__dirname + '/assets'));
-// http://localhost:port/cssFiles
-app.get('/helloThere', function(request, response) {
-  response.send('Hello there, from express!')
+
+app.get('/', function(req, resp) {
+  resp.sendFile('index.html', {root: path.join(__dirname, './files')});
 });
 
 app.listen(1337, function() {
